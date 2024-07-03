@@ -1,20 +1,26 @@
-import Building from './5-building';
-
-export default class SkyHighBuilding extends Building {
-  constructor(sqft, floors) {
-    super(sqft);
-    this.floors = floors;
+export default class Airport {
+  constructor(name, code) {
+    this.name = name;
+    this.code = code;
   }
 
-  get floors() {
-    return this._floors;
+  get name() {
+    return this._name;
   }
 
-  set floors(floors) {
-    this._floors = floors;
+  set name(name) {
+    this._name = name;
   }
 
-  evacuationWarningMessage() {
-    return `Evacuate slowly the ${this.floors} floors`;
+  get code() {
+    return this._code;
+  }
+
+  set code(code) {
+    this._code = code;
+  }
+
+  toString() {
+    return `[object ${this.code}]`;
   }
 }
