@@ -6,7 +6,7 @@ export default function cleanSet(set, startString) {
   if (!startString) {
     return '';
   }
-  let resultArray = [];
+  const resultArray = [];
 
   for (const value of set.values()) {
     if (typeof value === 'string' && value.startsWith(startString)) {
@@ -17,5 +17,5 @@ export default function cleanSet(set, startString) {
       }
     }
   }
-  return resultArray.join("-");
+  return resultArray.join('-');
 }
