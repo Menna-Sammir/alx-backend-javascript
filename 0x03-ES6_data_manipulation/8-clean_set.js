@@ -3,8 +3,15 @@
  */
 
 export default function cleanSet(valuesSet, startString) {
-  const resultArray = Array.from(valuesSet)
-    .filter((value) => value.startsWith(startString))
-    .map((value) => value.substring(startString.length));
-  return resultArray.join('-');
+  if (startString === '') {
+    return '';
+  }
+  let resultArray = [];
+
+  valuesSet.forEach((value) => {
+    if (value.startsWith(startString)) {
+      resultArray.push(value.substring(startString.length));
+    }
+  });
+  return resultArray.join("-");
 }
