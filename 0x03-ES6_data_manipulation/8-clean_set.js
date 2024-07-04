@@ -2,13 +2,13 @@
  * Joins a set of strings with a dash after stripping the strings of
  */
 
-export default function cleanSet(valuesSet, startString) {
-  if (startString === '') {
+export default function cleanSet(set, startString) {
+  if (!startString) {
     return '';
   }
   let resultArray = [];
 
-  valuesSet.forEach((value) => {
+  set.forEach((value) => {
     if (value.startsWith(startString)) {
       resultArray.push(value.substring(startString.length));
     }
