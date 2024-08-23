@@ -1,7 +1,7 @@
 const readDatabase = require('../utils');
 
 class StudentsController {
-  static getAllStudents (request, response) {
+  static getAllStudents(request, response) {
     readDatabase(process.argv[2].toString())
       .then((students) => {
         const output = [];
@@ -12,7 +12,7 @@ class StudentsController {
           output.push(
             `Number of students in ${keys[i]}: ${
               students[keys[i]].length
-            }. List: ${students[keys[i]].join(', ')}`
+            }. List: ${students[keys[i]].join(', ')}`,
           );
         }
         response.status(200).send(output.join('\n'));
@@ -22,7 +22,7 @@ class StudentsController {
       });
   }
 
-  static getAllStudentsByMajor (request, response) {
+  static getAllStudentsByMajor(request, response) {
     const field = request.params.major;
     readDatabase(process.argv[2].toString())
       .then((students) => {
